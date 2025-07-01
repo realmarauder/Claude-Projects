@@ -143,21 +143,15 @@
         .xrp { background: linear-gradient(135deg, #23292f, #0085c3); }
         .zec { background: linear-gradient(135deg, #231f20, #f4b728); }
         
-        /* Static Assets */
-        .treasury { background: linear-gradient(135deg, #2c3e50, #3498db); }
-        
-        /* Dynamic Stock Gradients */
-        .stock-default { background: linear-gradient(135deg, #34495e, #5f6a6a); }
-        .stock-1 { background: linear-gradient(135deg, #e31837, #cc1338); }
-        .stock-2 { background: linear-gradient(135deg, #34495e, #2c3e50); }
-        .stock-3 { background: linear-gradient(135deg, #003478, #0066cc); }
-        .stock-4 { background: linear-gradient(135deg, #4b0082, #663399); }
-        .stock-5 { background: linear-gradient(135deg, #8b0000, #dc143c); }
-        .stock-6 { background: linear-gradient(135deg, #228b22, #32cd32); }
-        .stock-7 { background: linear-gradient(135deg, #ff6347, #ff4500); }
-        .stock-8 { background: linear-gradient(135deg, #4682b4, #5f9ea0); }
-        .stock-9 { background: linear-gradient(135deg, #800080, #9932cc); }
-        .stock-10 { background: linear-gradient(135deg, #ff8c00, #ffa500); }
+        /* Additional Assets */
+        .tsla { background: linear-gradient(135deg, #e31837, #cc1338); }
+        .tmc { background: linear-gradient(135deg, #34495e, #2c3e50); }
+        .ford { background: linear-gradient(135deg, #003478, #0066cc); }
+        .fdx { background: linear-gradient(135deg, #4b0082, #663399); }
+        .lmt { background: linear-gradient(135deg, #8b0000, #dc143c); }
+        .pmt { background: linear-gradient(135deg, #228b22, #32cd32); }
+        .fnma { background: linear-gradient(135deg, #ff6347, #ff4500); }
+        .fmcc { background: linear-gradient(135deg, #4682b4, #5f9ea0); }
 
         .crypto-info h3 {
             font-size: 1.3rem;
@@ -237,233 +231,6 @@
             margin: 20px 0;
         }
 
-        /* Dynamic Stock Management Styles */
-        .remove-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 28px;
-            height: 28px;
-            background: rgba(255, 71, 87, 0.8);
-            border: none;
-            border-radius: 50%;
-            color: white;
-            font-size: 14px;
-            font-weight: bold;
-            cursor: pointer;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s ease;
-            backdrop-filter: blur(5px);
-        }
-
-        .crypto-card:hover .remove-btn {
-            display: flex;
-        }
-
-        .remove-btn:hover {
-            background: rgba(255, 71, 87, 1);
-            transform: scale(1.1);
-        }
-
-        .add-stock-container {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 25px;
-            border: 2px dashed rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 180px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .add-stock-container:hover {
-            border-color: rgba(102, 126, 234, 0.5);
-            transform: translateY(-2px);
-        }
-
-        .add-stock-container.expanded {
-            cursor: default;
-        }
-
-        .add-btn {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border: none;
-            border-radius: 50%;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-bottom: 10px;
-        }
-
-        .add-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
-        }
-
-        .add-stock-form {
-            display: none;
-            flex-direction: column;
-            width: 100%;
-            gap: 15px;
-        }
-
-        .add-stock-form.visible {
-            display: flex;
-        }
-
-        .stock-input {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
-            padding: 12px 15px;
-            color: white;
-            font-size: 16px;
-            outline: none;
-            transition: all 0.3s ease;
-        }
-
-        .stock-input:focus {
-            border-color: #667eea;
-            box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
-        }
-
-        .stock-input::placeholder {
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .stock-preview {
-            display: none;
-            background: rgba(102, 126, 234, 0.1);
-            border: 1px solid rgba(102, 126, 234, 0.3);
-            border-radius: 10px;
-            margin: 10px 0;
-            max-height: 200px;
-            overflow-y: auto;
-        }
-
-        .stock-preview.visible {
-            display: block;
-        }
-
-        .stock-result {
-            padding: 12px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .stock-result:last-child {
-            border-bottom: none;
-        }
-
-        .stock-result:hover {
-            background: rgba(102, 126, 234, 0.2);
-        }
-
-        .stock-result.selected {
-            background: rgba(102, 126, 234, 0.3);
-        }
-
-        .stock-result-symbol {
-            font-weight: 600;
-            color: #667eea;
-        }
-
-        .stock-result-name {
-            color: #a0a0a0;
-            font-size: 0.9rem;
-            margin-top: 2px;
-        }
-
-        .no-results {
-            padding: 12px;
-            color: #ff4757;
-            text-align: center;
-        }
-
-        .form-buttons {
-            display: flex;
-            gap: 10px;
-        }
-
-        .btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            flex: 1;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .confirmation-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            backdrop-filter: blur(5px);
-        }
-
-        .confirmation-modal.visible {
-            display: flex;
-        }
-
-        .modal-content {
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-            border-radius: 20px;
-            padding: 30px;
-            max-width: 400px;
-            width: 90%;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .modal-content h3 {
-            margin-bottom: 15px;
-            color: #ff4757;
-        }
-
-        .modal-content p {
-            margin-bottom: 25px;
-            color: #a0a0a0;
-        }
-
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 2.2rem;
@@ -477,42 +244,249 @@
                 padding: 0 10px;
             }
         }
+		
+		.trend-indicator {
+			text-align: center;
+			margin: 20px 0;
+			padding: 15px;
+			border-radius: 10px;
+			font-weight: 600;
+			font-size: 1.1rem;
+			backdrop-filter: blur(10px);
+			border: 1px solid rgba(255, 255, 255, 0.1);
+		}
+
+		.trend-up {
+			background: rgba(0, 255, 136, 0.1);
+			color: #00ff88;
+			border-color: rgba(0, 255, 136, 0.3);
+		}
+
+		.trend-down {
+			background: rgba(255, 71, 87, 0.1);
+			color: #ff4757;
+			border-color: rgba(255, 71, 87, 0.3);
+		}
+		
+		.market-ticker {
+			background: rgba(255, 255, 255, 0.05);
+			border-radius: 10px;
+			padding: 15px;
+			margin: 20px 0;
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			backdrop-filter: blur(10px);
+			overflow: hidden;
+			position: relative;
+		}
+
+		.ticker-content {
+			display: flex;
+			animation: scroll-ticker 20s linear infinite;
+			white-space: nowrap;
+		}
+
+		.ticker-item {
+			margin-right: 60px;
+			font-weight: 600;
+			font-size: 1rem;
+		}
+
+		.ticker-positive {
+			color: #00ff88;
+		}
+
+		.ticker-negative {
+			color: #ff4757;
+		}
+
+		@keyframes scroll-ticker {
+			0% { transform: translateX(100%); }
+			100% { transform: translateX(-100%); }
+		}
+		
+		.add-stock-card {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			border: 2px dashed rgba(255, 255, 255, 0.3);
+			background: rgba(255, 255, 255, 0.02);
+			transition: all 0.3s ease;
+			min-height: 200px;
+		}
+
+		.add-stock-card:hover {
+			border-color: rgba(102, 126, 234, 0.5);
+			background: rgba(102, 126, 234, 0.05);
+		}
+
+		.add-stock-content {
+			text-align: center;
+		}
+
+		.add-stock-icon {
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			background: linear-gradient(135deg, #667eea, #764ba2);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 2rem;
+			font-weight: bold;
+			margin: 0 auto 15px;
+			color: white;
+		}
+
+		.add-stock-text {
+			color: #a0a0a0;
+			font-size: 1.1rem;
+			font-weight: 600;
+		}
+
+		.add-stock-expanded {
+			width: 100%;
+			padding: 20px;
+		}
+
+		#stockSearch {
+			width: 100%;
+			padding: 12px;
+			border: 1px solid rgba(255, 255, 255, 0.2);
+			border-radius: 8px;
+			background: rgba(255, 255, 255, 0.1);
+			color: white;
+			font-size: 1rem;
+			margin-bottom: 15px;
+		}
+
+		#stockSearch::placeholder {
+			color: rgba(255, 255, 255, 0.5);
+		}
+
+		.search-results {
+			max-height: 150px;
+			overflow-y: auto;
+			margin-bottom: 15px;
+			border-radius: 8px;
+			background: rgba(255, 255, 255, 0.05);
+		}
+
+		.search-result-item {
+			padding: 10px 15px;
+			cursor: pointer;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+			transition: background 0.2s ease;
+		}
+
+		.search-result-item:hover {
+			background: rgba(102, 126, 234, 0.2);
+		}
+
+		.search-result-item:last-child {
+			border-bottom: none;
+		}
+
+		.result-symbol {
+			font-weight: bold;
+			color: #667eea;
+		}
+
+		.result-name {
+			color: #a0a0a0;
+			font-size: 0.9rem;
+			margin-top: 2px;
+		}
+
+		.add-stock-buttons {
+			display: flex;
+			gap: 10px;
+		}
+
+		.add-stock-buttons button {
+			flex: 1;
+			padding: 10px;
+			border: none;
+			border-radius: 8px;
+			font-weight: 600;
+			cursor: pointer;
+			transition: all 0.3s ease;
+		}
+
+		#cancelBtn {
+			background: rgba(255, 255, 255, 0.1);
+			color: white;
+		}
+
+		#cancelBtn:hover {
+			background: rgba(255, 255, 255, 0.2);
+		}
+
+		#addBtn {
+			background: linear-gradient(135deg, #667eea, #764ba2);
+			color: white;
+		}
+
+		#addBtn:disabled {
+			opacity: 0.5;
+			cursor: not-allowed;
+		}
+
+		#addBtn:not(:disabled):hover {
+			transform: translateY(-2px);
+			box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+		}
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
             <h1>Asset Dashboard</h1>
-            <p>Real-time crypto and stock prices, volumes, and network data</p>
+            <p>Real-time portfolio data</p>
         </div>
         
         <div class="last-updated" id="lastUpdated">
             Loading data...
         </div>
 
-        <h2 class="section-heading">Cryptocurrency</h2>
-        <div class="crypto-grid" id="cryptoGrid">
+		<h2 class="section-heading">Global Assets</h2>
+			<div id="trendIndicator" class="trend-indicator" style="display: none;">
+				<!-- Trend indicator will be populated by JavaScript -->
+			</div>
+		<div class="crypto-grid" id="cryptoGrid">
             <div class="loading">
                 <div class="spinner"></div>
                 <p>Fetching cryptocurrency data...</p>
             </div>
         </div>
 
-        <h2 class="section-heading">Market Assets</h2>
-        <div class="crypto-grid" id="assetsGrid">
-        </div>
-    </div>
-
-    <!-- Confirmation Modal -->
-    <div class="confirmation-modal" id="confirmationModal">
-        <div class="modal-content">
-            <h3>Remove Stock</h3>
-            <p id="confirmationText">Are you sure you want to remove this stock from your dashboard?</p>
-            <div class="form-buttons">
-                <button class="btn btn-secondary" onclick="closeConfirmationModal()">Cancel</button>
-                <button class="btn btn-primary" id="confirmRemoveBtn">Remove</button>
-            </div>
-        </div>
+		<h2 class="section-heading">U.S. Market Assets</h2>
+			<div id="marketTrendIndicator" class="trend-indicator" style="display: none;">
+				<!-- Market trend indicator will be populated by JavaScript -->
+			</div>
+		<div class="market-ticker">
+			<div class="ticker-content" id="tickerContent">
+				<span class="ticker-item">Loading market data...</span>
+			</div>
+		</div>
+		
+		<!-- Stock Controls -->
+		<div class="crypto-grid" id="assetsGrid">
+			<div class="crypto-card add-stock-card" id="addStockCard">
+				<div class="add-stock-content" id="addStockDefault">
+					<div class="add-stock-icon">+</div>
+					<div class="add-stock-text">Add Stock</div>
+				</div>
+				<div class="add-stock-expanded" id="addStockExpanded" style="display: none;">
+					<input type="text" id="stockSearch" placeholder="Enter company name or ticker symbol">
+					<div class="search-results" id="searchResults"></div>
+					<div class="add-stock-buttons">
+						<button id="cancelBtn">Cancel</button>
+						<button id="addBtn" disabled>Add Stock</button>
+					</div>
+				</div>
+			</div>
+		</div>
     </div>
 
     <script>
@@ -525,75 +499,21 @@
             { id: 'zcash', symbol: 'ZEC', name: 'Zcash', class: 'zec' }
         ];
 
-        // Static treasury asset
-        const treasuryAsset = { id: 'treasury-10y', symbol: 'TNX', name: '10-Year Treasury', class: 'treasury', type: 'bond' };
+		// Replace the const additionalAssets = [...] with:
+		let additionalAssets = [
+			{ id: 'tesla', symbol: 'TSLA', name: 'Tesla Inc.', class: 'tsla', type: 'stock' },
+			{ id: 'metals-company', symbol: 'TMC', name: 'The Metals Company', class: 'tmc', type: 'stock' },
+			{ id: 'ford', symbol: 'F', name: 'Ford Motor Co.', class: 'ford', type: 'stock' },
+			{ id: 'fedex', symbol: 'FDX', name: 'FedEx Corporation', class: 'fdx', type: 'stock' },
+			{ id: 'lockheed', symbol: 'LMT', name: 'Lockheed Martin', class: 'lmt', type: 'stock' },
+			{ id: 'pennymac', symbol: 'PMT', name: 'PennyMac Mortgage', class: 'pmt', type: 'stock' },
+			{ id: 'fanniemae', symbol: 'FNMA', name: 'Fannie Mae', class: 'fnma', type: 'stock' },
+			{ id: 'freddiemac', symbol: 'FMCC', name: 'Freddie Mac', class: 'fmcc', type: 'stock' }
+		];
 
-        // Default stocks
-        const defaultStocks = [
-            { symbol: 'TSLA', name: 'Tesla Inc.' },
-            { symbol: 'TMC', name: 'The Metals Company' },
-            { symbol: 'F', name: 'Ford Motor Co.' },
-            { symbol: 'FDX', name: 'FedEx Corporation' },
-            { symbol: 'LMT', name: 'Lockheed Martin' },
-            { symbol: 'PMT', name: 'PennyMac Mortgage' },
-            { symbol: 'FNMA', name: 'Fannie Mae' },
-            { symbol: 'FMCC', name: 'Freddie Mac' }
-        ];
-
-        // Dynamic stocks management
-        let userStocks = [];
-        let stockGradientIndex = 1;
-        const apiKey = 'Get your own API Key from finnhub.io';
-
-        function loadUserStocks() {
-            const saved = localStorage.getItem('userStocks');
-            if (saved) {
-                userStocks = JSON.parse(saved);
-            } else {
-                // First time - load defaults
-                userStocks = defaultStocks.map((stock, index) => ({
-                    ...stock,
-                    id: stock.symbol.toLowerCase(),
-                    class: `stock-${(index % 10) + 1}`,
-                    type: 'stock'
-                }));
-                saveUserStocks();
-            }
-        }
-
-        function saveUserStocks() {
-            localStorage.setItem('userStocks', JSON.stringify(userStocks));
-        }
-
-        function getNextStockClass() {
-            stockGradientIndex = (stockGradientIndex % 10) + 1;
-            return `stock-${stockGradientIndex}`;
-        }
-
-        async function searchStock(query) {
-            try {
-                const response = await fetch(`https://finnhub.io/api/v1/search?q=${encodeURIComponent(query)}&token=${apiKey}`);
-                if (response.ok) {
-                    const data = await response.json();
-                    if (data.result && data.result.length > 0) {
-                        // Return multiple matches, filtered for common stock types
-                        return data.result
-                            .filter(match => match.type === 'Common Stock' || match.type === 'ETP' || !match.type)
-                            .slice(0, 5) // Limit to 5 results
-                            .map(match => ({
-                                symbol: match.symbol,
-                                name: match.description,
-                                type: match.type || 'Stock'
-                            }));
-                    }
-                }
-                return [];
-            } catch (error) {
-                console.error('Error searching stock:', error);
-                return [];
-            }
-        }
-
+		let dynamicStocks = [];
+		initializeDynamicStocks();
+		
         function formatNumber(num) {
             if (num >= 1e12) return (num / 1e12).toFixed(2) + 'T';
             if (num >= 1e9) return (num / 1e9).toFixed(2) + 'B';
@@ -647,7 +567,7 @@
             `;
         }
 
-        function createAssetCard(asset, data, removable = false) {
+        function createAssetCard(asset, data) {
             const change24h = data.price_change_percentage_24h || 0;
             const changeClass = getChangeClass(change24h);
             const changeSymbol = change24h >= 0 ? '+' : '';
@@ -660,11 +580,8 @@
             const priceLabel = asset.type === 'bond' ? 'Yield' : 'Price';
             const priceValue = asset.type === 'bond' ? `${(data.current_price || 0).toFixed(3)}%` : formatPrice(data.current_price || 0);
             
-            const removeBtn = removable ? `<button class="remove-btn" onclick="showRemoveConfirmation('${asset.symbol}', '${asset.name}')">×</button>` : '';
-            
             return `
-                <div class="crypto-card" data-symbol="${asset.symbol}">
-                    ${removeBtn}
+                <div class="crypto-card">
                     <div class="crypto-header">
                         <div class="crypto-icon ${asset.class}">${asset.symbol}</div>
                         <div class="crypto-info">
@@ -694,269 +611,15 @@
             `;
         }
 
-        function createAddStockCard() {
-            return `
-                <div class="add-stock-container" onclick="toggleAddForm()">
-                    <button class="add-btn">+</button>
-                    <p style="color: #a0a0a0; margin: 0;">Add Stock</p>
-                    
-                    <div class="add-stock-form" id="addStockForm">
-                        <input type="text" class="stock-input" id="stockInput" placeholder="Enter company name or ticker symbol" onkeyup="handleStockInput(event)">
-                        <div class="stock-preview" id="stockPreview"></div>
-                        <div class="form-buttons">
-                            <button class="btn btn-secondary" onclick="cancelAddStock()">Cancel</button>
-                            <button class="btn btn-primary" id="addStockBtn" onclick="addStock()" disabled>Add Stock</button>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-
-        let currentStockData = null;
-        let addFormVisible = false;
-        let searchResults = [];
-        let selectedResultIndex = -1;
-
-        function toggleAddForm() {
-            if (addFormVisible) return;
-            
-            const form = document.getElementById('addStockForm');
-            const container = document.querySelector('.add-stock-container');
-            
-            form.classList.add('visible');
-            container.classList.add('expanded');
-            container.onclick = null;
-            addFormVisible = true;
-            
-            // Reset form state
-            resetAddForm();
-            
-            setTimeout(() => {
-                document.getElementById('stockInput').focus();
-            }, 100);
-        }
-
-        function resetAddForm() {
-            const preview = document.getElementById('stockPreview');
-            const input = document.getElementById('stockInput');
-            const addBtn = document.getElementById('addStockBtn');
-            
-            input.value = '';
-            preview.classList.remove('visible');
-            preview.innerHTML = '';
-            addBtn.disabled = true;
-            currentStockData = null;
-            searchResults = [];
-            selectedResultIndex = -1;
-        }
-
-        function cancelAddStock() {
-            const form = document.getElementById('addStockForm');
-            const container = document.querySelector('.add-stock-container');
-            
-            form.classList.remove('visible');
-            container.classList.remove('expanded');
-            container.onclick = toggleAddForm;
-            addFormVisible = false;
-            
-            resetAddForm();
-        }
-
-        async function handleStockInput(event) {
-            const query = event.target.value.trim();
-            const preview = document.getElementById('stockPreview');
-            const addBtn = document.getElementById('addStockBtn');
-            
-            // Handle keyboard navigation
-            if (event.key === 'ArrowDown') {
-                event.preventDefault();
-                if (selectedResultIndex < searchResults.length - 1) {
-                    selectedResultIndex++;
-                    updateResultSelection();
-                }
-                return;
-            } else if (event.key === 'ArrowUp') {
-                event.preventDefault();
-                if (selectedResultIndex > 0) {
-                    selectedResultIndex--;
-                    updateResultSelection();
-                }
-                return;
-            } else if (event.key === 'Enter') {
-                event.preventDefault();
-                if (selectedResultIndex >= 0 && searchResults[selectedResultIndex]) {
-                    selectStock(searchResults[selectedResultIndex]);
-                } else if (currentStockData) {
-                    addStock();
-                }
-                return;
-            }
-            
-            if (query.length < 1) {
-                preview.classList.remove('visible');
-                addBtn.disabled = true;
-                currentStockData = null;
-                searchResults = [];
-                selectedResultIndex = -1;
-                return;
-            }
-            
-            // Debounce search
-            clearTimeout(window.searchTimeout);
-            window.searchTimeout = setTimeout(async () => {
-                const stockDataArray = await searchStock(query);
-                searchResults = stockDataArray;
-                selectedResultIndex = -1;
-                
-                if (searchResults.length > 0) {
-                    displaySearchResults();
-                } else {
-                    preview.innerHTML = '<div class="no-results">No matching stocks found</div>';
-                    preview.classList.add('visible');
-                    addBtn.disabled = true;
-                    currentStockData = null;
-                }
-            }, 300);
-        }
-
-        function displaySearchResults() {
-            const preview = document.getElementById('stockPreview');
-            let html = '';
-            
-            searchResults.forEach((stock, index) => {
-                // Check if stock already exists
-                const exists = userStocks.some(userStock => userStock.symbol.toLowerCase() === stock.symbol.toLowerCase());
-                const disabledClass = exists ? ' style="opacity: 0.5; cursor: not-allowed;"' : '';
-                const existsText = exists ? ' (Already added)' : '';
-                
-                html += `
-                    <div class="stock-result${index === selectedResultIndex ? ' selected' : ''}" 
-                         data-index="${index}" 
-                         onclick="${exists ? '' : `selectStock(searchResults[${index}])`}"${disabledClass}>
-                        <div class="stock-result-symbol">${stock.symbol}</div>
-                        <div class="stock-result-name">${stock.name}${existsText}</div>
-                    </div>
-                `;
-            });
-            
-            preview.innerHTML = html;
-            preview.classList.add('visible');
-        }
-
-        function updateResultSelection() {
-            const results = document.querySelectorAll('.stock-result');
-            results.forEach((result, index) => {
-                if (index === selectedResultIndex) {
-                    result.classList.add('selected');
-                    // Auto-select the stock when navigating with keyboard
-                    if (searchResults[index]) {
-                        selectStock(searchResults[index]);
-                    }
-                } else {
-                    result.classList.remove('selected');
-                }
-            });
-        }
-
-        function selectStock(stockData) {
-            // Check if stock already exists
-            const exists = userStocks.some(stock => stock.symbol.toLowerCase() === stockData.symbol.toLowerCase());
-            const addBtn = document.getElementById('addStockBtn');
-            
-            if (exists) {
-                addBtn.disabled = true;
-                currentStockData = null;
-                return;
-            }
-            
-            currentStockData = stockData;
-            addBtn.disabled = false;
-            
-            // Update the selected state visually
-            const results = document.querySelectorAll('.stock-result');
-            results.forEach(result => result.classList.remove('selected'));
-            
-            const selectedIndex = searchResults.findIndex(s => s.symbol === stockData.symbol);
-            if (selectedIndex >= 0) {
-                selectedResultIndex = selectedIndex;
-                results[selectedIndex]?.classList.add('selected');
-            }
-        }
-
-        function addStock() {
-            if (!currentStockData) return;
-            
-            const newStock = {
-                symbol: currentStockData.symbol,
-                name: currentStockData.name,
-                id: currentStockData.symbol.toLowerCase(),
-                class: getNextStockClass(),
-                type: 'stock'
-            };
-            
-            userStocks.push(newStock);
-            saveUserStocks();
-            
-            // Don't reset form, just clear the current selection
-            currentStockData = null;
-            selectedResultIndex = -1;
-            searchResults = [];
-            
-            const input = document.getElementById('stockInput');
-            const preview = document.getElementById('stockPreview');
-            const addBtn = document.getElementById('addStockBtn');
-            
-            // Clear input and preview, but keep form open
-            input.value = '';
-            preview.classList.remove('visible');
-            preview.innerHTML = '';
-            addBtn.disabled = true;
-            
-            // Focus back to input for next stock
-            setTimeout(() => {
-                input.focus();
-            }, 100);
-            
-            // Update dashboard without destroying form
-            updateDashboard();
-        }
-
-        function showRemoveConfirmation(symbol, name) {
-            const modal = document.getElementById('confirmationModal');
-            const text = document.getElementById('confirmationText');
-            const confirmBtn = document.getElementById('confirmRemoveBtn');
-            
-            text.textContent = `Are you sure you want to remove ${name} (${symbol}) from your dashboard?`;
-            
-            confirmBtn.onclick = () => {
-                removeStock(symbol);
-                closeConfirmationModal();
-            };
-            
-            modal.classList.add('visible');
-        }
-
-        function closeConfirmationModal() {
-            document.getElementById('confirmationModal').classList.remove('visible');
-        }
-
-        function removeStock(symbol) {
-            userStocks = userStocks.filter(stock => stock.symbol !== symbol);
-            saveUserStocks();
-            
-            // Force a fresh data fetch to ensure clean state
-            setTimeout(() => {
-                updateDashboard();
-            }, 100);
-        }
-
         async function fetchCryptoData() {
             try {
+                // Use the working CoinGecko API that was successful before
                 const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana,dogecoin,ripple,zcash&vs_currencies=usd&include_24hr_change=true&include_24hr_vol=true&include_market_cap=true');
                 
                 if (response.ok) {
                     const data = await response.json();
                     
+                    // Transform the data to match our expected format
                     const transformedData = [];
                     const mapping = {
                         'bitcoin': 'bitcoin',
@@ -982,6 +645,18 @@
                     return transformedData;
                 }
                 
+                // If primary API fails, try Coinbase as backup
+                try {
+                    const coinbaseResponse = await fetch('https://api.coinbase.com/v2/exchange-rates?currency=USD');
+                    if (coinbaseResponse.ok) {
+                        const coinbaseData = await coinbaseResponse.json();
+                        return generateMockDataFromCoinbase(coinbaseData);
+                    }
+                } catch (e) {
+                    console.log('Coinbase backup also failed');
+                }
+                
+                // Final fallback to mock data
                 return generateCryptoMockData();
                 
             } catch (error) {
@@ -990,217 +665,476 @@
             }
         }
 
-        function generateCryptoMockData() {
-            const baseData = {
-                bitcoin: { price: 95000, change: 2.5, volume: 28000000000, mcap: 1800000000000 },
-                ethereum: { price: 3400, change: -1.2, volume: 15000000000, mcap: 410000000000 },
-                solana: { price: 140, change: 4.8, volume: 2500000000, mcap: 65000000000 },
-                dogecoin: { price: 0.32, change: -0.8, volume: 1200000000, mcap: 47000000000 },
-                ripple: { price: 2.1, change: 1.5, volume: 3200000000, mcap: 120000000000 },
-                zcash: { price: 65, change: -2.1, volume: 180000000, mcap: 980000000 }
-            };
-
-            const variation = () => (Math.random() - 0.5) * 0.1;
-            
-            return Object.keys(baseData).map(id => ({
-                id: id,
-                current_price: baseData[id].price * (1 + variation()),
-                price_change_percentage_24h: baseData[id].change + (Math.random() - 0.5) * 2,
-                total_volume: baseData[id].volume * (1 + variation()),
-                market_cap: baseData[id].mcap * (1 + variation())
-            }));
-        }
-
-        async function fetchStockData() {
-            const stockData = {};
-            const symbols = userStocks.map(stock => stock.symbol);
-            
-            try {
-                for (const symbol of symbols) {
-                    try {
-                        const response = await fetch(`https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${apiKey}`);
-                        
-                        if (response.ok) {
-                            const data = await response.json();
-                            
-                            if (data.c && data.c > 0) {
-                                stockData[symbol] = {
-                                    price: data.c,
-                                    change: data.dp || 0,
-                                    high: data.h || 0,
-                                    low: data.l || 0
-                                };
-                            }
-                        }
-                    } catch (e) {
-                        console.error(`Error fetching ${symbol}:`, e);
-                    }
-                }
-                
-            } catch (error) {
-                console.error('Error fetching stock data:', error);
-                throw error;
-            }
-            
-            return stockData;
-        }
-
-        async function fetchTreasuryData() {
-            const baseRate = 4.25;
-            const variation = (Math.random() - 0.5) * 0.1;
-            
-            return {
-                price: baseRate + variation,
-                change: (Math.random() - 0.5) * 0.2,
-                high: 0,
-                low: 0
-            };
-        }
+		async function fetchStockData() {
+			const stockData = {};
+			const apiKey = 'd1e4st9r01qlt46sktkgd1e4st9r01qlt46sktl0';
+			
+			// Get symbols dynamically from additionalAssets instead of hardcoded array
+			const symbols = additionalAssets.map(asset => asset.symbol);
+			
+			try {
+				// Fetch real-time quotes for all stocks
+				for (const symbol of symbols) {
+					try {
+						const response = await fetch(`https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${apiKey}`);
+						
+						if (response.ok) {
+							const data = await response.json();
+							
+							if (data.c && data.c > 0) {
+								stockData[symbol] = {
+									price: data.c,
+									change: data.dp || 0,
+									high: data.h || 0,
+									low: data.l || 0
+								};
+							}
+						} else {
+							console.error(`Failed to fetch ${symbol}: ${response.status}`);
+						}
+					} catch (e) {
+						console.error(`Error fetching ${symbol}:`, e);
+					}
+				}
+				
+			} catch (error) {
+				console.error('Error fetching stock data from Finnhub:', error);
+				throw error;
+			}
+			
+			return stockData;
+		}
 
         async function fetchAllData() {
-            const [cryptoData, stockData, treasuryData] = await Promise.all([
+            const [cryptoData, stockData] = await Promise.all([
                 fetchCryptoData(),
-                fetchStockData(),
-                fetchTreasuryData()
+                fetchStockData()
             ]);
             
+            // Merge crypto data with stock data
             const allData = [...cryptoData];
-            
-            // Add treasury data
-            allData.push({
-                id: 'treasury-10y',
-                current_price: treasuryData.price,
-                price_change_percentage_24h: treasuryData.change,
-                day_high: treasuryData.price,
-                day_low: treasuryData.price
-            });
-            
-            // Add user stock data
-            userStocks.forEach(stock => {
-                if (stockData[stock.symbol] && stockData[stock.symbol].price > 0) {
-                    allData.push({
-                        id: stock.id,
-                        current_price: stockData[stock.symbol].price,
-                        price_change_percentage_24h: stockData[stock.symbol].change,
-                        day_high: stockData[stock.symbol].high,
-                        day_low: stockData[stock.symbol].low
-                    });
-                }
-            });
-            
+			
+			// Add stock data - NO fallback to mock data
+			additionalAssets.forEach(asset => {
+				if (stockData[asset.symbol] && stockData[asset.symbol].price > 0) {
+					allData.push({
+						id: asset.id,
+						current_price: stockData[asset.symbol].price,
+						price_change_percentage_24h: stockData[asset.symbol].change,
+						day_high: stockData[asset.symbol].high,
+						day_low: stockData[asset.symbol].low
+					});
+				}
+			});
+           
             return allData;
         }
 
-        function updateLastUpdated() {
+        function updateLastUpdated(isDemo = false) {
             const now = new Date();
-            document.getElementById('lastUpdated').textContent = `Last updated: ${now.toLocaleString()}`;
+            const suffix = isDemo ? ' (Demo Mode - Simulated Data)' : '';
+            document.getElementById('lastUpdated').textContent = `Last updated: ${now.toLocaleString()}${suffix}`;
         }
 
-        async function updateDashboard() {
-            const cryptoGridElement = document.getElementById('cryptoGrid');
-            const assetsGridElement = document.getElementById('assetsGrid');
-            
-            // Store add form state before update
-            const addFormElement = document.getElementById('addStockForm');
-            const wasFormVisible = addFormElement && addFormElement.classList.contains('visible');
-            const inputValue = wasFormVisible ? document.getElementById('stockInput')?.value || '' : '';
-            
-            try {
-                const data = await fetchAllData();
-                
-                let cryptoHtml = '';
-                let assetsHtml = '';
-                
-                // Add crypto cards
-                cryptos.forEach(crypto => {
-                    const cryptoData = data.find(item => item.id === crypto.id);
-                    if (cryptoData) {
-                        cryptoHtml += createCryptoCard(crypto, cryptoData);
-                    } else {
-                        cryptoHtml += createCryptoCard(crypto, {
-                            current_price: 0,
-                            price_change_percentage_24h: 0,
-                            total_volume: 0,
-                            market_cap: 0
-                        });
-                    }
-                });
-                
-                // Add treasury card (static)
-                const treasuryData = data.find(item => item.id === treasuryAsset.id);
-                if (treasuryData) {
-                    assetsHtml += createAssetCard(treasuryAsset, treasuryData, false);
-                }
-                
-                // Add user stock cards (dynamic) - with better error handling
-                userStocks.forEach(stock => {
-                    const stockData = data.find(item => item.id === stock.id);
-                    if (stockData && stockData.current_price > 0) {
-                        assetsHtml += createAssetCard(stock, stockData, true);
-                    } else {
-                        // If no data, show placeholder but don't show zero values
-                        assetsHtml += createAssetCard(stock, {
-                            current_price: 0,
-                            price_change_percentage_24h: 0,
-                            day_high: 0,
-                            day_low: 0
-                        }, true);
-                    }
-                });
-                
-                // Add the "Add Stock" card
-                assetsHtml += createAddStockCard();
-                
-                cryptoGridElement.innerHTML = cryptoHtml;
-                assetsGridElement.innerHTML = assetsHtml;
-                updateLastUpdated();
-                
-                // Restore add form state if it was visible
-                if (wasFormVisible) {
-                    setTimeout(() => {
-                        const form = document.getElementById('addStockForm');
-                        const container = document.querySelector('.add-stock-container');
-                        const input = document.getElementById('stockInput');
-                        
-                        if (form && container && input) {
-                            form.classList.add('visible');
-                            container.classList.add('expanded');
-                            container.onclick = null;
-                            addFormVisible = true;
-                            
-                            // Restore input value if there was one
-                            if (inputValue) {
-                                input.value = inputValue;
-                            }
-                            
-                            input.focus();
-                        }
-                    }, 50);
-                }
-                
-            } catch (error) {
-                console.error('Dashboard update error:', error);
-                cryptoGridElement.innerHTML = `
-                    <div class="error">
-                        <p>Unable to fetch financial data. Please check your internet connection and try again.</p>
-                        <p style="margin-top: 10px; font-size: 0.9rem;">Error: ${error.message}</p>
-                    </div>
-                `;
-                assetsGridElement.innerHTML = '';
-            }
-        }
+		function calculateGlobalTrend(data) {
+			// Get all global assets (cryptos only)
+			const globalAssetIds = [...cryptos.map(c => c.id)];
+			const globalData = data.filter(item => globalAssetIds.includes(item.id));
+			
+			if (globalData.length === 0) return null;
+			
+			const positiveCount = globalData.filter(item => 
+				(item.price_change_percentage_24h || 0) >= 0
+			).length;
+			
+			const negativeCount = globalData.length - positiveCount;
+			
+			return {
+				isPositive: positiveCount > negativeCount,
+				positiveCount,
+				negativeCount,
+				total: globalData.length
+			};
+		}
 
-        // Initialize
-        loadUserStocks();
-        updateDashboard();
-        setInterval(updateDashboard, 30000);
+		function calculateMarketTrend(data) {
+			// Get all market assets (everything except treasury)
+			const marketAssetIds = additionalAssets
+				.filter(asset => asset.id !== 'treasury-10y')
+				.map(asset => asset.id);
+			
+			const marketData = data.filter(item => marketAssetIds.includes(item.id));
+			
+			if (marketData.length === 0) return null;
+			
+			const positiveCount = marketData.filter(item => 
+				(item.price_change_percentage_24h || 0) >= 0
+			).length;
+			
+			const negativeCount = marketData.length - positiveCount;
+			
+			return {
+				isPositive: positiveCount > negativeCount,
+				positiveCount,
+				negativeCount,
+				total: marketData.length
+			};
+		}
 
-        // Close modal when clicking outside
-        document.getElementById('confirmationModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeConfirmationModal();
+		async function fetchIndexData() {
+			const indices = [
+				{ symbol: 'SPY', name: 'S&P 500', multiplier: 10 },      // SPY is roughly 1/10th of S&P 500
+				{ symbol: 'DIA', name: 'Dow Jones', multiplier: 99.5 },   // DIA is roughly 1/100th of DJIA  
+				{ symbol: 'QQQ', name: 'NASDAQ', multiplier: 41.1 },     // QQQ shows actual price, different index but close
+				{ symbol: 'GLD', name: 'Gold', multiplier: 10.92 },    // Gold per ounce
+				{ symbol: 'SLV', name: 'Silver', multiplier: 1.11 }   // Silver per ounce
+			];
+			
+			const apiKey = 'GET YOUR OWN, BUB';
+			const indexData = [];
+			
+			try {
+				for (const index of indices) {
+					const response = await fetch(`https://finnhub.io/api/v1/quote?symbol=${index.symbol}&token=${apiKey}`);
+					
+					if (response.ok) {
+						const data = await response.json();
+						if (data.c && data.c > 0) {
+							indexData.push({
+								name: index.name,
+								price: data.c * index.multiplier,  // Scale to approximate index value
+								change: (data.d || 0) * index.multiplier,
+								changePercent: data.dp || 0        // Percentage change stays the same
+							});
+						}
+					}
+				}
+			} catch (error) {
+				console.error('Error fetching index data:', error);
+			}
+			
+			return indexData;
+		}
+
+		async function searchStocks(query) {
+			const apiKey = 'GET YOUR OWN, BUB';
+			
+			try {
+				const response = await fetch(`https://finnhub.io/api/v1/search?q=${encodeURIComponent(query)}&token=${apiKey}`);
+				
+				if (response.ok) {
+					const data = await response.json();
+					// Filter to only US stocks and limit to 8 results
+					const filteredResults = data.result
+						.filter(stock => stock.type === 'Common Stock' && !stock.symbol.includes('.'))
+						.slice(0, 8);
+					
+					return filteredResults;
+				}
+			} catch (error) {
+				console.error('Error searching stocks:', error);
+			}
+			
+			return [];
+		}
+
+		function displaySearchResults(results, searchResultsElement, addBtn) {
+			if (results.length === 0) {
+				searchResultsElement.innerHTML = '<div style="padding: 15px; text-align: center; color: #888;">No results found</div>';
+				addBtn.disabled = true;
+				return;
+			}
+			
+			const resultsHtml = results.map(stock => `
+				<div class="search-result-item" data-symbol="${stock.symbol}" data-name="${stock.description}">
+					<div class="result-symbol">${stock.symbol}</div>
+					<div class="result-name">${stock.description}</div>
+				</div>
+			`).join('');
+			
+			searchResultsElement.innerHTML = resultsHtml;
+			
+			// Add click handlers for each result
+			searchResultsElement.querySelectorAll('.search-result-item').forEach(item => {
+				item.addEventListener('click', () => {
+					const symbol = item.dataset.symbol;
+					const name = item.dataset.name;
+					
+					// Highlight selected item
+					searchResultsElement.querySelectorAll('.search-result-item').forEach(i => i.style.background = '');
+					item.style.background = 'rgba(102, 126, 234, 0.3)';
+					
+					// Enable add button and store selection
+					addBtn.disabled = false;
+					addBtn.dataset.selectedSymbol = symbol;
+					addBtn.dataset.selectedName = name;
+				});
+			});
+		}
+
+		function saveDynamicStocks() {
+			try {
+				localStorage.setItem('dashboardDynamicStocks', JSON.stringify(dynamicStocks));
+			} catch (e) {
+				console.warn('Could not save dynamic stocks to localStorage:', e);
+			}
+		}
+
+		function loadDynamicStocks() {
+			try {
+				const saved = localStorage.getItem('dashboardDynamicStocks');
+				if (saved) {
+					const parsed = JSON.parse(saved);
+					dynamicStocks.push(...parsed);
+					console.log('Loaded dynamic stocks:', dynamicStocks);
+				}
+			} catch (e) {
+				console.warn('Could not load dynamic stocks from localStorage:', e);
+			}
+		}
+
+		function initializeDynamicStocks() {
+			loadDynamicStocks();
+			restoreDynamicStocks();
+		}
+
+		function attachAddStockListeners() {
+			const addStockCard = document.getElementById('addStockCard');
+			const addStockDefault = document.getElementById('addStockDefault');
+			const addStockExpanded = document.getElementById('addStockExpanded');
+			const stockSearch = document.getElementById('stockSearch');
+			const cancelBtn = document.getElementById('cancelBtn');
+			const addBtn = document.getElementById('addBtn');
+			const searchResults = document.getElementById('searchResults');
+			
+			if (!addStockCard) return; // Safety check
+			
+			// Click to expand the add stock card
+			addStockDefault.addEventListener('click', () => {
+				addStockDefault.style.display = 'none';
+				addStockExpanded.style.display = 'block';
+				stockSearch.focus();
+			});
+			
+			// Cancel button - collapse back to default state
+			cancelBtn.addEventListener('click', () => {
+				addStockExpanded.style.display = 'none';
+				addStockDefault.style.display = 'block';
+				stockSearch.value = '';
+				searchResults.innerHTML = '';
+				addBtn.disabled = true;
+			});
+			
+			// Search input event listener
+			stockSearch.addEventListener('input', async (e) => {
+				const query = e.target.value.trim();
+				if (query.length >= 2) {
+					const results = await searchStocks(query);
+					displaySearchResults(results, searchResults, addBtn);
+				} else {
+					searchResults.innerHTML = '';
+					addBtn.disabled = true;
+				}
+			});
+			
+			//Add Button Handler
+			addBtn.addEventListener('click', () => {
+				const selectedSymbol = addBtn.dataset.selectedSymbol;
+				const selectedName = addBtn.dataset.selectedName;
+				
+				if (selectedSymbol && selectedName) {
+					// Check if stock already exists
+					const exists = additionalAssets.some(asset => asset.symbol === selectedSymbol);
+					if (exists) {
+						alert('Stock already added!');
+						return;
+					}
+					
+					// Create new stock object
+					const newStock = {
+						id: selectedSymbol.toLowerCase(),
+						symbol: selectedSymbol,
+						name: selectedName,
+						class: 'tsla',
+						type: 'stock'
+					};
+					
+					// Add to both arrays
+					additionalAssets.push(newStock);
+					dynamicStocks.push(newStock);
+					
+					// SAVE TO localStorage
+					saveDynamicStocks();
+					
+					// Reset and refresh
+					addStockExpanded.style.display = 'none';
+					addStockDefault.style.display = 'block';
+					stockSearch.value = '';
+					searchResults.innerHTML = '';
+					addBtn.disabled = true;
+					
+					updateDashboard();
+				}
+			});
+		}
+
+		function restoreDynamicStocks() {
+			// Re-add any dynamically added stocks that aren't in the original list
+			dynamicStocks.forEach(stock => {
+				const exists = additionalAssets.some(asset => asset.symbol === stock.symbol);
+				if (!exists) {
+					additionalAssets.push(stock);
+				}
+			});
+		}
+
+async function updateDashboard() {
+    restoreDynamicStocks(); // Add this line at the very beginning
+    const cryptoGridElement = document.getElementById('cryptoGrid');
+    const assetsGridElement = document.getElementById('assetsGrid');
+    
+    try {
+        const data = await fetchAllData();
+        const hasRealData = data.some(item => item.current_price > 1000 && Number.isInteger(item.current_price * 100));
+        
+        let cryptoHtml = '';
+        let assetsHtml = '';
+        
+        // Add crypto cards to Global Assets section
+        cryptos.forEach(crypto => {
+            const cryptoData = data.find(item => item.id === crypto.id);
+            if (cryptoData) {
+                cryptoHtml += createCryptoCard(crypto, cryptoData);
+            } else {
+                cryptoHtml += createCryptoCard(crypto, {
+                    current_price: 0,
+                    price_change_percentage_24h: 0,
+                    total_volume: 0,
+                    market_cap: 0
+                });
             }
         });
+                
+		// Add remaining stock cards to Market Assets section (everything except treasury)
+        additionalAssets.forEach(asset => {
+            if (asset.id !== 'treasury-10y') { // Skip treasury since we added it above
+                const assetData = data.find(item => item.id === asset.id);
+                if (assetData) {
+                    assetsHtml += createAssetCard(asset, assetData);
+                } else {
+                    assetsHtml += createAssetCard(asset, {
+                        current_price: 0,
+                        price_change_percentage_24h: 0,
+                        day_high: 0,
+                        day_low: 0
+                    });
+                }
+            }
+        });
+
+        // Calculate and display Global Assets indicator
+        const trendData = calculateGlobalTrend(data);
+        const trendElement = document.getElementById('trendIndicator');
+
+        if (trendData && trendData.total > 0) {
+            const trendClass = trendData.isPositive ? 'trend-up' : 'trend-down';
+            const trendText = trendData.isPositive ? 'Currently Trending Up' : 'Currently Trending Down';
+            const countText = `${trendData.isPositive ? trendData.positiveCount : trendData.negativeCount} of ${trendData.total} assets`;
+            
+            trendElement.className = `trend-indicator ${trendClass}`;
+            trendElement.innerHTML = `${trendText} <span style="opacity: 0.8; font-size: 0.9rem;">(${countText})</span>`;
+            trendElement.style.display = 'block';
+        } else {
+            trendElement.style.display = 'none';
+        }
+
+		// Calculate and display U.S. Market Assets trend indicator
+		const marketTrendData = calculateMarketTrend(data);
+		const marketTrendElement = document.getElementById('marketTrendIndicator');
+
+		if (marketTrendData && marketTrendData.total > 0) {
+			const marketTrendClass = marketTrendData.isPositive ? 'trend-up' : 'trend-down';
+			const marketTrendText = marketTrendData.isPositive ? 'Currently Trending Up' : 'Currently Trending Down';
+			const marketCountText = `${marketTrendData.isPositive ? marketTrendData.positiveCount : marketTrendData.negativeCount} of ${marketTrendData.total} assets`;
+			
+			marketTrendElement.className = `trend-indicator ${marketTrendClass}`;
+			marketTrendElement.innerHTML = `${marketTrendText} <span style="opacity: 0.8; font-size: 0.9rem;">(${marketCountText})</span>`;
+			marketTrendElement.style.display = 'block';
+		} else {
+			marketTrendElement.style.display = 'none';
+		}
+		
+		// Update ticker with index data
+		const indexData = await fetchIndexData();
+		const tickerElement = document.getElementById('tickerContent');
+
+		if (indexData.length > 0) {
+			const tickerItems = indexData.map(index => {
+				const changeClass = index.changePercent >= 0 ? 'ticker-positive' : 'ticker-negative';
+				const changeSymbol = index.changePercent >= 0 ? '+' : '';
+				// Format price without $ and with commas, show change with + sign and commas
+				const formattedPrice = index.price.toLocaleString('en-US', { 
+					minimumFractionDigits: 2, 
+					maximumFractionDigits: 2 
+				});
+				const formattedChange = Math.abs(index.change).toLocaleString('en-US', { 
+					minimumFractionDigits: 2, 
+					maximumFractionDigits: 2 
+				});
+				
+				return `<span class="ticker-item">
+					${index.name}: ${formattedPrice} 
+					<span class="${changeClass}">${changeSymbol}${formattedChange} (${changeSymbol}${index.changePercent.toFixed(2)}%)</span>
+				</span>`;
+			}).join('');
+			
+			tickerElement.innerHTML = tickerItems;
+		} else {
+			tickerElement.innerHTML = '<span class="ticker-item">Market data unavailable</span>';
+		}
+
+        // Add the "Add Stock" card at the end
+        assetsHtml += `
+            <div class="crypto-card add-stock-card" id="addStockCard">
+                <div class="add-stock-content" id="addStockDefault">
+                    <div class="add-stock-icon">+</div>
+                    <div class="add-stock-text">Add Stock</div>
+                </div>
+                <div class="add-stock-expanded" id="addStockExpanded" style="display: none;">
+                    <input type="text" id="stockSearch" placeholder="Enter company name or ticker symbol">
+                    <div class="search-results" id="searchResults"></div>
+                    <div class="add-stock-buttons">
+                        <button id="cancelBtn">Cancel</button>
+                        <button id="addBtn" disabled>Add Stock</button>
+                    </div>
+                </div>
+            </div>
+        `;
+
+		//Inner HTML - Don't Touch
+			cryptoGridElement.innerHTML = cryptoHtml;
+			assetsGridElement.innerHTML = assetsHtml;
+			updateLastUpdated(!hasRealData);
+
+        // RE-ATTACH EVENT LISTENERS after rebuilding HTML
+        attachAddStockListeners();
+			
+		} catch (error) {
+			cryptoGridElement.innerHTML = `
+				<div class="error">
+					<p>Unable to fetch financial data. Please check your internet connection and try again.</p>
+					<p style="margin-top: 10px; font-size: 0.9rem;">Error: ${error.message}</p>
+				</div>
+			`;
+			assetsGridElement.innerHTML = '';
+		}
+		}
+
+        // Initial load
+        updateDashboard();
+
+        // Update every 60 seconds
+        setInterval(updateDashboard, 60000);
     </script>
 </body>
 </html>
